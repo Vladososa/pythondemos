@@ -33,8 +33,16 @@ while True:
 
     # burza proverka kakvo sum vzel
     if choice in ('1', '2', '3', '4'):
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+        
+        try:
+            num1 = float(input("Enter first number: "))
+        except ValueError:
+            print("ne pishi dumi bro!")
+
+        try:
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("kazah ti bez dumi")
 
         if choice == '1':
             print(num1, "+", num2, "=", add(num1, num2))
